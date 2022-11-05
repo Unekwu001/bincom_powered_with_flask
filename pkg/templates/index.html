@@ -1,0 +1,124 @@
+{%set m =get_flashed_messages()%}
+<html>
+        <head>
+                <title>Bincom</title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="/static/bootstrap/animate.min.css">
+		<link rel="stylesheet" href="/static/fontawesome/css/all.min.css">
+		<style type="text/css">
+			@font-face{font-family:"Amita";src:url('/static/fonts/Amita-Regular.woff')}
+                        @font-face{font-family:"Ubuntu";src:url('/static/fonts/Ubuntu-Regular.ttf')}
+			#firstrow{background-color: rgb(100, 100, 98);}
+			#learnmore{height:8vh}
+			#menulogo{background-color:rgb(100, 100, 98)}
+			#logologin{background-color:rgb(100, 100, 98)}
+			#picslash{background-image:url("/static/images/bin3.jpeg");background-size:cover;background-repeat:no-repeat;height:100vh}
+			#foslash ul li{border-color:orange;display:block;margin:15%;background-color:rgb(100, 100, 98);padding:2%;text-align:center;
+			border-radius:5px; font-family:"Ubuntu";color:white}
+			#foslash ul li:hover{background-color:orange;color:black}
+			#foslash{background-image:url("/static/images/3.png");background-size:cover;background-color:rgba(0, 0, 0, 0.692) ;background-repeat:repeat;height:100vh;
+			background-position:top}
+			#picslash_overlay{color:white}
+			#writeon_overlay{position:relative;top:25vh;right:15vw;text-align:center;}
+			a{text-decoration:none}
+			#logologin a span:hover{background-color:green;color:white}
+			#overlay_brands ul li{display:inline-block;padding:2%}
+			#overlay_brands{margin-top:-45vh}
+			img:hover{transform:scale(1.1)}
+			#sticker{position:sticky;top:0px}
+			input,select{border-color:white;width:10vw;background-color:rgb(2, 2, 2);color:black;padding:10%;height:2vh;margin-left:2vw}
+			form{margin-left:1vw;background-color: rgba(250, 250, 250, 0.692);padding:2%}
+			#myfarmers ul li{display:inline-block}
+			table tr td a:hover{color:orange}
+			table tr td a{color:white}
+			#seefarmerprofile{background-color:white;margin:3%;border-radius:5px}
+			#logo{position:absolute;top:4vh}
+	</style>
+        </head>
+        
+        <body>
+		<div class="container-fluid">
+			<div class="row"id="sticker">
+				<div class="col-md-4"id="firstrow">
+					<a href="https://www.bincom.net" target="_blank">
+						<button class="btn btn-success form-control-md mt-2" id="learnmore">
+							Visit Bincom
+						</button>
+					</a>
+				</div>
+				<div class="col" id="menulogo">
+					 
+				</div>
+				<div id="logologin" class="col-md-6">
+					<a href=""><img src="/static/images/bin.jpeg" width=70vw height=70vh class="img-fluid"></a>
+					 
+
+					<a id="aprofile" href="" target="_self"><span id="profile"style="border-radius:10px;
+					color:white;background-color:green;padding:2%;margin-left:20%;">Submitted by Unekwuojo Shaibu</span></a>
+			
+ 
+			</div>
+			<div class="row">
+                  		<div class="col-md-2" id="foslash">
+                                        <ul>
+                                        
+					<a class="leftoptions"href="{{url_for('index')}}"target="_self"><li style="margin-top:2vh">Dashboard</li></a>
+					<a class="leftoptions"href="{{url_for('pu_8')}}" target="_self"><li style="margin-top:2vh">Sapele Ward 8 PU (question1)</li></a>
+					<a class="leftoptions"href="{{url_for('sum_total')}}" target="_self"><li style="margin-top:2vh">Total results by polling units (question 2)</li></a>
+                                        </ul>
+
+                                </div>
+				
+				<div class="col-md-10" id="picslash"><!---------------for----jinja insertion------------>
+					{%block header %}
+						<h1 style="font-family:Amita;color:white;margin-top:5vh;margin-left:33vw"> </h1>
+					{% endblock header%}
+
+					{% block content %}
+
+					
+						
+						<div class="col-3 offset-5"id= "writeon_overlay">
+							<h5 style="font-family:Ubuntu;color:white;border-radius:20px;border-color:orange">  </h5>
+
+							<marquee style="text-align:center;color:orange"><h4>Designed by Unekwuojo Theophilus Shaibu<h4>
+							<h6 style="color:white">Full stack developer<h6></marquee>
+						</div>
+					</div>
+					
+					<div id="overlay_brands" class="col-md-8 offset-3">
+						<ul>
+							<li><a href="https://www.linkedin.com/in/unekwuojo-shaibu-4148b01ba/"target="_blank">
+								<img class="animate__animated animate__pulse animate__repeat-3 " 
+								src="/static/images/linkedin.png"height="80vh" width="80vw"></a></li>
+							<li><a href="https://web.facebook.com/ProfessorTheophilus" target="_blank">
+								<img class="animate__animated animate__pulse animate__repeat-3 " 
+								src="/static/images/facebook.png"height="80vh" width="80vw"color="blue"></a></li>
+							<li><a href="https://www.instagram.com/teeyo_360/" target="_blank"><img 
+							       class="animate__animated animate__pulse animate__repeat-3 " 
+							    src="/static/images/insta.png"height="80vh" width="80vw"></a></li>
+							<li><a href="https://twitter.com/teeyo360" target="_blank"><img 
+								class="animate__animated animate__pulse animate__repeat-3 " 
+								src="/static/images/twitter.png"height="80vh" width="80vw"></a></li>
+							<li><a href="https://wa.link/hi74nq" target="_blank"><img 
+								     class="animate__animated animate__pulse animate__repeat-3 "
+								src="/static/images/whatsapp1.png"height="80vh" width="80vw"></a></li>
+						</ul>	
+					</div>{% endblock content%}
+				
+				</div><!-------------jinja ends here--------------->
+			</div>
+		</div>
+
+
+                <script src="/static/jquery/jquery.min.js"></script>
+                <script type="text/javascript" language="javascript">
+					 
+
+				</script>
+        </body>
+</html>
+
+                  

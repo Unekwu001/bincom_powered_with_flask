@@ -1,0 +1,33 @@
+{% extends 'index.html'%}
+{%block header%}
+<h2 style="color:orange;text-align:center">Results for Sapele ward 8</h2>
+{%endblock header%}
+
+{% block content %}
+<div class="col">
+    
+    <table  class="table table_stripped" style="color:white;background-color:grey;text-align:center">
+        <tr>
+            <th>S/N</th>
+            <th>Party</th>
+            <th>Score</th>
+            <th>Entered by</th>
+            <th>Date entered</th>
+            <th>Polling unit's unique ID</th>
+            <td></td>
+        </tr>
+        {%for i in record%}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i.party_abbreviation}}</td>
+            <td>{{i.party_score}}</td>
+            <td>{{i.entered_by_user}}</td>
+            <td>{{i.date_entered}}</td>
+            <td>{{i.polling_unit_uniqueid}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    
+    
+</div>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'index.html'%}
+
+{%block header%}
+<h2 style="color:orange;text-align:center">Sum Total of Results by Polling unit</h2>
+{%endblock header%}
+
+{% block content %}
+<div class="col">
+    <form method="post" action="{{url_for('check')}}">
+        <select name="lga" style="color:white;height:2vh;width:10vw" class="form-control-sm">
+            <option value="">Select LGAs</option>
+                {%for i in lgas %}
+            <option value="{{i.lga_id}}">{{i.lga_name}}</option>
+                {% endfor %}
+        </select>
+            <button type="submit">Search Result</button>
+            <a href="{{url_for('sum_total')}}"><button type="button">refresh</button></a>
+            <h6 style="color:orange;text-align:center"></h6>
+            <table class="table table_stripped">
+                <tr>
+                    <th>S/N</th>
+                    <th>Party</th>
+                    <th>Score</th>
+                    <th>Polling units</th>
+                    <th>Lga id</th>
+                </tr>
+                {%for i in details %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{i.party_abbreviation}}</td>
+                    <td>{{i.party_score}}</td>
+                    <td>{{i.polling_unit_name}}</td>
+                    <td>{{i.lga_id}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+    </form>
+</div>
+{% endblock content %}
